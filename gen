@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Teamnaam Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #teamNames {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quiz Teamnaam Generator</h1>
+  <button id="generateButton">Genereer Teamnamen</button>
+  <div id="teamNames"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const teamNames = [
+        "De Slimme Koppen",
+        "Quiz Whizzes",
+        "De Denk Tank",
+        "Slimmeriken",
+        "De Kennis Koningen",
+        "De Breinbrekers",
+        "De Trivia Toppers",
+        "De Quiz Kampioenen",
+        "De Intelligente Idioten",
+        "De Vraagmeesters"
+      ];
+
+      function generateTeamNames() {
+        const numOfNames = 3; // Aantal namen om te genereren
+        let selectedNames = [];
+        for (let i = 0; i < numOfNames; i++) {
+          const randomIndex = Math.floor(Math.random() * teamNames.length);
+          selectedNames.push(teamNames[randomIndex]);
+        }
+        document.getElementById('teamNames').innerHTML = selectedNames.join('<br>');
+      }
+
+      document.getElementById('generateButton').addEventListener('click', generateTeamNames);
+    });
+  </script>
+</body
